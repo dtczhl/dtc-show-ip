@@ -44,7 +44,7 @@ send_json(){
 	web_response=$(curl -s -i \
 		-H "Accept: application/json" \
 		-H "Content-Type:application/json" \
-		-X POST --data "${1}" "${my_website}" ) #| grep -Eo 'dtcResponse=[0-9];')
+		-X POST --data "${1}" "${my_website}"  | grep -Eo 'dtcResponse=[0-9];')
 }
 
 build_json_string(){
@@ -69,13 +69,20 @@ build_json_string
 
 send_json "${json_string}"
 
-echo $web_response
+if [ -n $web_response ]; then
+	
+	responseCode=$( echo $web_response | tr ';=' '::' | cut -d ':' -f 2 )
+	case $responseCode in 
+		
+		'0')
+			echo 'IP update OK'
+			;;
+		'1')
+			echo 'IP strings too long'
+			;;
+		*)
+			echo 'Error in response code' 1>&2 
+			;;
+	esac
+fi # check reponse code
 
-if [ "${ip_response}" == "" ]; then
-	echo "    Cannot get right response format"
-	echo "        Check, e.g., URL, data format, ..."
-	exit 1
-fi
-
-
-echo "" # new line
