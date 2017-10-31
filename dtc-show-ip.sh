@@ -8,6 +8,7 @@
 my_website="http://localhost/json/dtc-show-ip.php"
 
 your_IPs=""
+your_message="Haha"
 web_response=""
 json_string=""
 
@@ -44,7 +45,7 @@ send_json(){
 	web_response=$(curl -s -i \
 		-H "Accept: application/json" \
 		-H "Content-Type:application/json" \
-		-X POST --data "${1}" "${my_website}"  | grep -Eo 'dtcResponse=[0-9];')
+		-X POST --data "${1}" "${my_website}" | grep -Eo 'dtcResponse=[0-9];')
 }
 
 build_json_string(){
@@ -52,7 +53,8 @@ build_json_string(){
 
 	json_string=$(cat <<EOF
 {
-	"your_IPs": "${your_IPs}"
+	"your_IPs": "${your_IPs}",
+	"your_message": "${your_message}"
 }
 EOF
 )
