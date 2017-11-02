@@ -12,4 +12,4 @@ www.huanlezhang.com/interface.php
 
 ## Better call this script periodically using Crontab or at startup time.
 
-## The server side implementation is also released. See my [github](https://github.com/dtczhl/Personal-website): json and mySql folders.
+## The server side implementation is also released. See my [Github](https://github.com/dtczhl/Personal-website).
