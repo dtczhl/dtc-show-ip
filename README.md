@@ -2,7 +2,8 @@
 Provide interface to my website that shows your IPs. Useful for embedded devices without monitors
 
 Go to my personal website to see your IPs
-	www.huanlezhang.com/interface.php
+
+www.huanlezhang.com/interface.php
 
 Run:
 	./dtc-show-ip "your_message"
