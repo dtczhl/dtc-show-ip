@@ -8,7 +8,7 @@
 my_website="http://localhost/json/dtc-show-ip.php"
 
 your_IPs=""
-your_message="Haha"
+your_message=""
 web_response=""
 json_string=""
 
@@ -41,7 +41,7 @@ send_json(){
 		echo "Error in send_json, require a string to send"
 		exit -1
 	fi
-
+	
 	web_response=$(curl -s -i \
 		-H "Accept: application/json" \
 		-H "Content-Type:application/json" \
@@ -63,6 +63,14 @@ EOF
 }
 
 # main starts here
+
+if [ $# -ne 1 ]; then
+	echo "Error: "
+	echo "    Format: ./dtc-show-ip \"your_message\""
+	exit
+fi
+
+your_message=$1
 
 check_requirements 
 get_ips 
