@@ -5,7 +5,7 @@
 # Huanle Zhang
 # www.huanlezhang.com
 
-my_website="http://localhost/json/dtc-show-ip.php"
+my_website="http://www.huanlezhang.com/json/dtc-show-ip.php"
 
 your_IPs=""
 your_message=""
