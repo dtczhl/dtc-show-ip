@@ -9,8 +9,17 @@ www.huanlezhang.com/interface.php
 ```
 ./dtc-show-ip "your_message"
 ```
-Note: message length must be less than 20 characters
+Note: 
+	1. message length must be less than 20 characters
+	2. tested using bash
 
 ## Better call this script periodically using Crontab or at startup time.
 
+For example, run this script after booting, put a startup script under /etc/rc.d/, with 
+
+```
+#!/bin
+
+/bin/bash path_of_dtc-show-ip.sh "your message"
+```
 ## The server side implementation is also released. See my [Github](https://github.com/dtczhl/Personal-website).
