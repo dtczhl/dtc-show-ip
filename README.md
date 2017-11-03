@@ -10,8 +10,10 @@ www.huanlezhang.com/interface.php
 ./dtc-show-ip "your_message"
 ```
 Note: 
-	1. message length must be less than 20 characters
-	2. tested using bash
+
+1. message length must be less than 20 characters
+	
+2. tested using bash
 
 ## Better call this script periodically using Crontab or at startup time.
 
