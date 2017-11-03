@@ -66,11 +66,17 @@ EOF
 
 if [ $# -ne 1 ]; then
 	echo "Error: "
-	echo "    Format: ./dtc-show-ip \"your_message\""
+	echo "    Format: ./dtc-show-ip \"your_message\" (message length <20)"
 	exit
-fi
+fi 
 
 your_message=$1
+
+if [ ${#your_message} -ge 20 ]; then
+	echo "Error: "
+	echo "    Message length must be less than 20"
+	exit
+fi
 
 check_requirements 
 get_ips 
