@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# put this script under /etc/hotplug.d/inface/
+# when the interface "wlan0" is up, this script will run
+# change "wlan0" to your needs
+
+# Huanle Zhang
+# www.huanlezhang.com
+
+[ ifup = "$ACTION" -a "$DEVICE" = wlan0 ] && {
+	/bin/bash path_of_dtc-show-ip.sh "your_message" >> /root/log.txt 2>&1
+}
