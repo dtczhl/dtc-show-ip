@@ -10,5 +10,5 @@
 # www.huanlezhang.com
 
 [ ifup = "$ACTION" -a "$DEVICE" = wlan0 ] && {
-	/bin/bash /usr/bin/dtc-show-ip.sh "dtc: Raspi 1" >> /root/log.txt 2>&1
+	/bin/bash /usr/bin/dtc-show-ip.sh " " >> /root/log.txt 2>&1
 }
