@@ -18,8 +18,9 @@ check_requirements(){
 	required_commands=( 'ifconfig' 'grep' 'cut' 'curl' 'tr' )
 	for i in "${required_commands[@]}"; do
 		if ! command -v $i 1>/dev/null 2>&1 ; then
-			echo "    You need to install ${i}"
-			echo "        and then run this script"
+			echo "From dtc-show-ip: "
+			echo "	You need to install ${i}"
+			echo "  and then run this script"
 			exit 1
 		fi
 	done
